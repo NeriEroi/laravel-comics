@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\Environment\Console;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data = config('comics');
+Route::get('/home', function () {
+    $array = config('comics');
+    $data = [
+        'comics'=>$array
+    ];
     return view('home', $data);
 });

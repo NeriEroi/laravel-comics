@@ -7,9 +7,18 @@
 @endsection
 
 @section('series')
-    <h1>
-        SERIES
-    </h1>
+    <ul>
+        
+        @foreach ($comics as $comic)
+            
+            <img src="{{ $comic['thumb'] }}" alt="">
+            
+            {{ $comic['series'] }}
+
+
+        @endforeach
+
+    </ul>
 @endsection
 
 @section('shop')
