@@ -7,18 +7,31 @@
 @endsection
 
 @section('series')
-    <ul>
+
+    <div class="container">
+
+        <ul>
         
-        @foreach ($comics as $comic)
-            
-            <img src="{{ $comic['thumb'] }}" alt="">
-            
-            {{ $comic['series'] }}
+            @foreach ($comics as $comic)
+    
+                <li class="item_cont">
+                    <div class="image_cont">
+                        <img src="{{ $comic['thumb'] }}" alt="comic image">
+                    </div>
+                    
+                    <div class="title_cont">
+                        <p>
+                            {{ $comic['series'] }}
+                        </p>
+                    </div>
+                </li>
+    
+            @endforeach
+    
+        </ul>
 
-
-        @endforeach
-
-    </ul>
+    </div>
+    
 @endsection
 
 @section('shop')
