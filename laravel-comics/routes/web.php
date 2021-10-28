@@ -14,10 +14,7 @@ use SebastianBergmann\Environment\Console;
 |
 */
 
-Route::get('/home', function () {
-    $array = config('comics');
-    $data = [
-        'comics'=>$array
-    ];
-    return view('home', $data);
+Route::get('/', function () {
+    $comics = config('comics');
+    return view('home', compact('comics'));
 });
